@@ -21,7 +21,7 @@ const addTrack = async function(req, res) {
 };
 
 const deleteTrack = async function(req, res) {
-  const { params: [{ id: trackId }] } = req;
+  const { params: { id: trackId } } = req;
 
   if (!trackId) {
     return res.status(codeNotFound).send({ message: 'Bad Request' });
@@ -48,7 +48,7 @@ const getTracks = async function(req, res) {
 };
 
 const updateTrack = async function(req, res) {
-  const { body: data, params: [{ id: trackId }] } = req;
+  const { body: data, params: { id: trackId } } = req;
 
   if (!trackId || !data) {
     return res.status(codeBadRequest).send({ message: 'Bad Request' });
