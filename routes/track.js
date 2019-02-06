@@ -1,6 +1,6 @@
 const express = require('express');
 
-const trackController = require('../controllers/trackController');
+const trackController = require('../controllers/track-controller');
 
 const router = new express.Router();
 
