@@ -5,7 +5,7 @@ const Track = require('../db/models/track-model');
 const addTrack = async function(req, res) {
   const { body: data } = req;
 
-  if (!data || !data.url) {
+  if (data == null || data.url == null) {
     return res.status(status.BAD_REQUEST).send({ message: 'Bad Request' });
   }
   try {
@@ -20,7 +20,7 @@ const addTrack = async function(req, res) {
 const deleteTrack = async function(req, res) {
   const { params: { id: trackId } } = req;
 
-  if (!trackId) {
+  if (trackId == null) {
     return res.status(status.NOT_FOUND).send({ message: 'Bad Request' });
   }
   try {
@@ -47,7 +47,7 @@ const getTracks = async function(req, res) {
 const updateTrack = async function(req, res) {
   const { body: data, params: { id: trackId } } = req;
 
-  if (!trackId || !data) {
+  if (trackId == null || data == null) {
     return res.status(status.BAD_REQUEST).send({ message: 'Bad Request' });
   }
   try {
